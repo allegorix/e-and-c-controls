@@ -98,7 +98,13 @@ export const CinematicHeroSection: React.FC<CinematicHeroSectionProps> = ({
     }
   };
 
-  const navLinks = ["Movies", "TV Series", "Editor's Pick", "Interviews", "User Reviews"];
+  const navLinks = [
+    { label: "Overview", target: "overview" },
+    { label: "Substation Diagram", target: "diagram" },
+    { label: "Expertise", target: "expertise" },
+    { label: "Projects", target: "projects" },
+    { label: "Contact Us", target: "contact" },
+  ];
 
   const scrollToSection = (id: string) => {
     setIsMobileMenuOpen(false);
@@ -148,25 +154,19 @@ export const CinematicHeroSection: React.FC<CinematicHeroSectionProps> = ({
         <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link, idx) => {
             const delay = 100 + idx * 50;
-            // Map links to functional anchors if needed
-            const sectionTarget =
-              link === "Movies" ? "overview" :
-              link === "TV Series" ? "diagram" :
-              link === "Editor's Pick" ? "expertise" :
-              link === "Interviews" ? "projects" : "contact";
 
             return (
               <a
-                key={link}
-                href={`#${sectionTarget}`}
+                key={link.label}
+                href={`#${link.target}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection(sectionTarget);
+                  scrollToSection(link.target);
                 }}
                 className="text-sm text-gray-200 hover:text-gray-300 transition-colors animate-blur-fade-up font-medium"
                 style={{ animationDelay: `${delay}ms` }}
               >
-                {link}
+                {link.label}
               </a>
             );
           })}
@@ -266,24 +266,18 @@ export const CinematicHeroSection: React.FC<CinematicHeroSectionProps> = ({
       >
         <div className="flex flex-col gap-2">
           {navLinks.map((link, idx) => {
-            const sectionTarget =
-              link === "Movies" ? "overview" :
-              link === "TV Series" ? "diagram" :
-              link === "Editor's Pick" ? "expertise" :
-              link === "Interviews" ? "projects" : "contact";
-
             return (
               <a
-                key={link}
-                href={`#${sectionTarget}`}
+                key={link.label}
+                href={`#${link.target}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection(sectionTarget);
+                  scrollToSection(link.target);
                 }}
                 className="py-3 px-3 rounded-lg hover:bg-gray-800/50 text-base text-gray-200 hover:text-white font-medium transition transform hover:translate-x-1"
                 style={{ transitionDelay: `${idx * 50}ms` }}
               >
-                {link}
+                {link.label}
               </a>
             );
           })}
