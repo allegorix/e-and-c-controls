@@ -18,66 +18,47 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', showTex
   return (
     <div className={`inline-flex items-center ${heightClasses[size]} ${className}`}>
       <svg
-        viewBox="0 0 540 130"
+        viewBox="0 0 540 140"
         className="h-full w-auto max-w-full drop-shadow-md"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Left E Mark */}
-        <g id="e-symbol">
-          <path
-            d="M 64 12
-               H 204
-               L 186 36
-               H 64
-               C 50 36 44 42 44 50
-               C 44 58 50 64 64 64
-               H 168
-               L 152 86
-               H 64
-               C 50 86 44 92 44 100
-               C 44 108 50 114 64 114
-               H 204
-               V 130
-               H 64
-               C 30 130 18 108 18 100
-               C 18 84 30 75 40 70
-               C 30 65 18 56 18 42
-               C 18 20 38 12 64 12 Z"
-            fill="#DCE6F8"
-          />
-        </g>
+        {/* Symbol Group */}
+        <g id="logo-mark">
+          {/* Left E Symbol (Light Blue) */}
+          <path d="M 60 18 C 36 18 20 34 20 60 H 182 L 196 18 Z" fill="#DCE6F8" />
+          <rect x="20" y="58" width="132" height="24" rx="4" fill="#DCE6F8" />
+          <path d="M 20 80 H 184 V 122 H 60 C 36 122 20 106 20 80 Z" fill="#DCE6F8" />
+          <path d="M 60 18 C 32 18 18 36 18 70 C 18 104 32 122 60 122 H 44 C 26 122 18 104 18 70 C 18 36 26 18 44 18 Z" fill="#DCE6F8" />
 
-        {/* Lightning Bolt */}
-        <polygon
-          points="218,12 174,72 212,72 198,128 254,62 216,62"
-          fill="#F15A24"
-        />
+          {/* Lightning Bolt (Orange) */}
+          <polygon points="198,18 156,70 232,70 192,124 222,62 170,62" fill="#F15A24" />
+        </g>
 
         {showText && (
           <g id="logo-text">
-            {/* E&C */}
+            {/* E&C Text */}
             <text
-              x="272"
-              y="72"
-              fontFamily="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+              x="252"
+              y="78"
+              fontFamily="'Arial Black', 'Impact', 'Montserrat', system-ui, -apple-system, sans-serif"
               fontWeight="900"
-              fontSize="66"
+              fontSize="64"
               fill="#F15A24"
-              letterSpacing="-1"
+              letterSpacing="-1.5"
             >
               E&amp;C
             </text>
 
-            {/* CONTROLS */}
+            {/* CONTROLS Text */}
             <text
-              x="274"
-              y="110"
-              fontFamily="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+              x="254"
+              y="112"
+              fontFamily="'Segoe UI', 'Roboto', 'Helvetica Neue', system-ui, sans-serif"
               fontWeight="800"
-              fontSize="28"
+              fontSize="27"
               fill="#98A5F8"
-              letterSpacing="3"
+              letterSpacing="4"
             >
               CONTROLS
             </text>
