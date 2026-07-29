@@ -27,7 +27,7 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', showTex
         <g id="logo-mark">
           {/* Left E Symbol (Light Lavender-Blue) */}
           <path
-            d="M 54 18 C 28 18 16 34 16 54 L 16 86 C 16 106 28 122 54 122 H 194 L 204 100 H 54 C 42 100 36 92 36 82 L 36 74 H 146 V 62 H 36 L 36 54 C 36 44 42 38 54 38 H 184 L 194 18 Z"
+            d="M 54 20 C 28 20 18 36 18 54 L 18 86 C 18 104 28 120 54 120 H 170 V 96 H 54 C 42 96 36 90 36 80 L 36 74 H 148 V 60 H 36 L 36 54 C 36 44 42 38 54 38 H 182 L 194 20 Z"
             fill="#DCE6F8"
           />
 
