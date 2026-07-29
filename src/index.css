@@ -69,3 +69,11 @@
   mask-image: linear-gradient(to top, black 0%, transparent 45%);
 }
 
+/* Ensures the logo is displayed without alteration */
+.ec-controls-logo {
+  max-width: 100%;    /* Prevents the logo from overflowing its container */
+  height: auto;       /* Forces the logo to keep its exact original proportions */
+  display: block;     /* Removes any weird spacing added by default text baselines */
+  object-fit: contain; /* Guarantees the image is never stretched or clipped */
+}
+
