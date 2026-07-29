@@ -61,28 +61,22 @@ export const Logo: React.FC<LogoProps> = ({
   return (
     <div className={`inline-flex items-center ${heightClasses[size]} ${className}`}>
       <svg
-        viewBox="0 0 540 140"
-        className="h-full w-auto max-w-full drop-shadow-md"
+        viewBox="0 0 540 160"
+        className="h-full w-auto max-w-full drop-shadow-sm"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         {/* Symbol Group */}
         <g id="logo-mark">
-          {/* Top Bar of 'E' Symbol (Light Lavender/Ice Blue) */}
+          {/* Left E Symbol (Light Lavender / Ice Blue #DCE6F8) */}
           <path
-            d="M 50 20 C 30 20 18 30 18 44 H 194 L 182 20 Z"
+            d="M 64 20 H 184 L 144 60 H 64 C 46 60 46 80 64 80 H 156 V 100 H 64 C 46 100 46 120 64 120 H 184 V 150 H 64 C 30 150 20 134 20 100 V 70 C 20 36 30 20 64 20 Z"
             fill={fills.symbol}
           />
 
-          {/* Middle Bar & Bottom Ribbon Loop of 'E' Symbol */}
-          <path
-            d="M 50 60 H 148 V 80 H 50 C 38 80 34 84 34 90 C 34 96 38 100 50 100 H 170 V 120 H 54 C 26 120 18 104 18 90 C 18 74 28 60 50 60 Z"
-            fill={fills.symbol}
-          />
-
-          {/* Lightning Bolt (Electric Orange) */}
+          {/* Lightning Bolt (Electric Orange #F15A24) */}
           <polygon
-            points="204,18 162,70 238,70 196,124 226,62 174,62"
+            points="206,18 162,74 236,74 194,130 226,64 174,64"
             fill={fills.bolt}
           />
         </g>
@@ -92,10 +86,10 @@ export const Logo: React.FC<LogoProps> = ({
             {/* E&C Text */}
             <text
               x="252"
-              y="78"
+              y="82"
               fontFamily="'Montserrat', 'Arial Black', 'Impact', system-ui, -apple-system, sans-serif"
               fontWeight="900"
-              fontSize="64"
+              fontSize="68"
               fill={fills.ecText}
               letterSpacing="-1.5"
             >
@@ -105,10 +99,10 @@ export const Logo: React.FC<LogoProps> = ({
             {/* CONTROLS Text */}
             <text
               x="254"
-              y="112"
+              y="120"
               fontFamily="'Segoe UI', 'Roboto', 'Helvetica Neue', system-ui, sans-serif"
               fontWeight="800"
-              fontSize="27"
+              fontSize="28"
               fill={fills.controlsText}
               letterSpacing="4"
             >
