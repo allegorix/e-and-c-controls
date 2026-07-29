@@ -1,0 +1,39 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 160' width='2160' height='640' fill='none'>
+  <g id='logo-mark'>
+    <!-- Top Bar of E -->
+    <path
+      d='M 60 20 H 184 L 148 60 H 60 C 42 60 30 48 30 30 C 30 24 35 20 60 20 Z'
+      fill='#DCE6F8'
+    />
+    <!-- Middle & Bottom Ribbon Loop of E -->
+    <path
+      d='M 60 60 H 152 L 138 80 H 60 C 48 80 40 88 40 100 C 40 112 48 120 60 120 H 184 L 170 140 H 60 C 26 140 10 122 10 100 C 10 78 26 60 60 60 Z'
+      fill='#DCE6F8'
+    />
+    <!-- Lightning Bolt -->
+    <polygon
+      points='206,18 162,74 236,74 194,130 226,64 174,64'
+      fill='#F15A24'
+    />
+  </g>
+  <g id='logo-text'>
+    <text
+      x='252'
+      y='82'
+      font-family='system-ui, -apple-system, Arial, sans-serif'
+      font-weight='900'
+      font-size='68'
+      fill='#F15A24'
+      letter-spacing='-1.5'
+    >E&amp;C</text>
+    <text
+      x='254'
+      y='120'
+      font-family='system-ui, -apple-system, Arial, sans-serif'
+      font-weight='800'
+      font-size='28'
+      fill='#98A5F8'
+      letter-spacing='4'
+    >CONTROLS</text>
+  </g>
+</svg>
