@@ -25,14 +25,14 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', showTex
       >
         {/* Symbol Group */}
         <g id="logo-mark">
-          {/* Left E Symbol (Light Blue) */}
-          <path d="M 60 18 C 36 18 20 34 20 60 H 182 L 196 18 Z" fill="#DCE6F8" />
-          <rect x="20" y="58" width="132" height="24" rx="4" fill="#DCE6F8" />
-          <path d="M 20 80 H 184 V 122 H 60 C 36 122 20 106 20 80 Z" fill="#DCE6F8" />
-          <path d="M 60 18 C 32 18 18 36 18 70 C 18 104 32 122 60 122 H 44 C 26 122 18 104 18 70 C 18 36 26 18 44 18 Z" fill="#DCE6F8" />
+          {/* Left E Symbol (Light Lavender-Blue) */}
+          <path
+            d="M 54 18 C 28 18 16 34 16 54 L 16 86 C 16 106 28 122 54 122 H 194 L 204 100 H 54 C 42 100 36 92 36 82 L 36 74 H 146 V 62 H 36 L 36 54 C 36 44 42 38 54 38 H 184 L 194 18 Z"
+            fill="#DCE6F8"
+          />
 
-          {/* Lightning Bolt (Orange) */}
-          <polygon points="198,18 156,70 232,70 192,124 222,62 170,62" fill="#F15A24" />
+          {/* Lightning Bolt (Electric Orange) */}
+          <polygon points="204,18 162,70 238,70 196,124 226,62 174,62" fill="#F15A24" />
         </g>
 
         {showText && (
