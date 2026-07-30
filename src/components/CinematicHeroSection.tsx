@@ -116,16 +116,13 @@ export const CinematicHeroSection: React.FC<CinematicHeroSectionProps> = ({
 
   return (
     <div className="relative min-h-screen h-screen w-full flex flex-col justify-between overflow-hidden bg-black text-white font-sans">
-      {/* 1. BACKGROUND VIDEO (Fixed, Loop, Muted, Autoplay, z-0) */}
-      <video
-        ref={videoRef}
-        src={currentSlide.videoUrl}
-        autoPlay
-        loop
-        muted={isMuted}
-        playsInline
-        className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none"
+      {/* 1. BACKGROUND IMAGE (Fixed, Full cover, z-0) */}
+      <img
+        src="/bg-technology.jpg"
+        alt="Background"
+        className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none animate-bg-zoom brightness-50"
       />
+      <div className="circuit-flow-overlay"></div>
 
       {/* 2. BOTTOM BLUR OVERLAY (No gradient darkening, pure backdrop-blur-xl with mask) */}
       <div
