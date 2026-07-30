@@ -7,6 +7,8 @@ export interface LogoProps {
   variant?: 'color' | 'white' | 'black' | 'current';
 }
 
+import logoImg from '../assets/logo.png';
+
 export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
   const sizeMap = {
     sm: 'h-[100px]',
@@ -18,7 +20,7 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
 
   return (
     <img 
-      src="./logo.png" 
+      src={logoImg} 
       alt="E&C Controls Logo" 
       className={`${sizeMap[size]} object-contain ${className}`}
     />
