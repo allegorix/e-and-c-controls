@@ -118,7 +118,7 @@ export const CinematicHeroSection: React.FC<CinematicHeroSectionProps> = ({
     <div className="relative min-h-screen h-screen w-full flex flex-col justify-between overflow-hidden bg-black text-white font-sans">
       {/* 1. BACKGROUND IMAGE (Fixed, Full cover, z-0) */}
       <img
-        src="/bg-technology.jpg"
+        src="./bg-technology.jpg"
         alt="Background"
         className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none animate-bg-zoom brightness-50"
       />
