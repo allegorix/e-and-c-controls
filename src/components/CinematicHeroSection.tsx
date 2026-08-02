@@ -56,8 +56,6 @@ const CINEMATIC_SLIDES = [
   }
 ];
 
-import bgImage from '../assets/bg-technology.jpg';
-
 export const CinematicHeroSection: React.FC<CinematicHeroSectionProps> = ({
   onOpenEstimator,
   onOpenBrochure,
@@ -118,13 +116,19 @@ export const CinematicHeroSection: React.FC<CinematicHeroSectionProps> = ({
 
   return (
     <div className="relative min-h-screen h-screen w-full flex flex-col justify-between overflow-hidden bg-black text-white font-sans">
-      {/* 1. BACKGROUND IMAGE (Fixed, Full cover, z-0) */}
-      <img
-        src={bgImage}
-        alt="Background"
-        className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none animate-bg-zoom brightness-50"
+      {/* 1. BACKGROUND MOTION VIDEO (Fixed, Full cover, z-0) */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
+        className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none"
       />
-      <div className="circuit-flow-overlay"></div>
+      {/* Noise overlay */}
+      <div className="fixed inset-0 noise-overlay opacity-[0.7] mix-blend-overlay pointer-events-none z-0" />
+      {/* Gradient overlay */}
+      <div className="fixed inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60 pointer-events-none z-0" />
 
       {/* 2. BOTTOM BLUR OVERLAY (No gradient darkening, pure backdrop-blur-xl with mask) */}
       <div
