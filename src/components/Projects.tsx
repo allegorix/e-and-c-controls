@@ -57,28 +57,28 @@ export const Projects: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-950/80 border border-orange-500/30 text-orange-300 text-xs font-semibold">
-            <Award className="w-3.5 h-3.5 text-orange-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-950/80 border border-blue-200 text-orange-300 text-xs font-semibold">
+            <Award className="w-3.5 h-3.5 text-blue-600" />
             <span>5. Major Projects Executed</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
             Proven Track Record Across Key Sectors
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
             Delivered over ₹2,031+ Lakhs in turnkey high-voltage electrical installations for major
             media groups, state enterprises, healthcare networks, and strategic defense agencies.
           </p>
         </div>
 
         {/* Project Cost Analytics Visualizer */}
-        <div className="p-6 sm:p-8 rounded-3xl liquid-glass border border-orange-500/20 backdrop-blur-xl shadow-2xl space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+        <div className="p-6 sm:p-8 rounded-3xl bg-white shadow-md border border-gray-100 border border-orange-500/20 backdrop-blur-xl shadow-2xl space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
             <div>
-              <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-orange-400" />
+              <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-blue-600" />
                 <span>Financial Distribution of Key Executed Projects (in Lakhs)</span>
               </h3>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-slate-500">
                 Aggregate turnkey electrification contract values across landmark sites
               </p>
             </div>
@@ -88,7 +88,7 @@ export const Projects: React.FC = () => {
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
                   chartType === 'bar'
                     ? 'bg-orange-400 text-slate-950'
-                    : 'liquid-glass text-slate-400 hover:text-white'
+                    : 'bg-white shadow-md border border-gray-100 text-slate-500 hover:text-white'
                 }`}
               >
                 <BarChart2 className="w-3.5 h-3.5" />
@@ -99,7 +99,7 @@ export const Projects: React.FC = () => {
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
                   chartType === 'pie'
                     ? 'bg-orange-400 text-slate-950'
-                    : 'liquid-glass text-slate-400 hover:text-white'
+                    : 'bg-white shadow-md border border-gray-100 text-slate-500 hover:text-white'
                 }`}
               >
                 <PieChartIcon className="w-3.5 h-3.5" />
@@ -184,7 +184,7 @@ export const Projects: React.FC = () => {
               placeholder="Search client, location, or scope..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl liquid-glass border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-orange-500"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white shadow-md border border-gray-100 border border-slate-200 text-xs text-slate-900 placeholder-slate-500 focus:outline-none focus:border-orange-500"
             />
           </div>
 
@@ -196,7 +196,7 @@ export const Projects: React.FC = () => {
                 className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition ${
                   selectedCategory === cat
                     ? 'bg-orange-400 text-slate-950 font-bold'
-                    : 'liquid-glass border border-slate-800 text-slate-400 hover:text-white'
+                    : 'bg-white shadow-md border border-gray-100 border border-slate-200 text-slate-500 hover:text-white'
                 }`}
               >
                 {cat}
@@ -210,40 +210,40 @@ export const Projects: React.FC = () => {
           {filteredProjects.map((p) => (
             <div
               key={p.id}
-              className="p-6 sm:p-8 rounded-3xl liquid-glass border border-slate-800/80 hover:border-orange-500/40 transition duration-300 relative overflow-hidden group shadow-xl space-y-6"
+              className="p-6 sm:p-8 rounded-3xl bg-white shadow-md border border-gray-100 border border-slate-200/80 hover:border-orange-500/40 transition duration-300 relative overflow-hidden group shadow-xl space-y-6"
             >
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800/80 pb-6">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200/80 pb-6">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-orange-950 text-orange-300 border border-orange-500/30">
+                    <span className="px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-orange-950 text-orange-300 border border-blue-200">
                       {p.category}
                     </span>
-                    <span className="px-3 py-0.5 rounded-full text-[10px] font-mono font-bold bg-slate-950 text-cyan-300 border border-cyan-500/30">
+                    <span className="px-3 py-0.5 rounded-full text-[10px] font-mono font-bold bg-slate-50 text-cyan-300 border border-cyan-500/30">
                       {p.voltageGrade}
                     </span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-orange-300 transition">
+                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 group-hover:text-orange-300 transition">
                     {p.client}
                   </h3>
-                  <div className="flex items-center gap-1.5 text-xs text-slate-400 mt-1">
+                  <div className="flex items-center gap-1.5 text-xs text-slate-500 mt-1">
                     <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
                     <span>{p.location}</span>
                   </div>
                 </div>
 
                 <div className="text-left md:text-right shrink-0">
-                  <p className="text-xs text-slate-400 font-medium">Contract Value</p>
-                  <p className="text-2xl sm:text-3xl font-black text-orange-400 tracking-tight">
-                    ₹{p.costInLakhs} <span className="text-sm font-bold text-slate-300">Lakhs</span>
+                  <p className="text-xs text-slate-500 font-medium">Contract Value</p>
+                  <p className="text-2xl sm:text-3xl font-black text-blue-600 tracking-tight">
+                    ₹{p.costInLakhs} <span className="text-sm font-bold text-slate-600">Lakhs</span>
                   </p>
                 </div>
               </div>
 
               <div className="space-y-4">
-                <p className="text-sm text-slate-300 leading-relaxed font-normal">{p.scope}</p>
+                <p className="text-sm text-slate-600 leading-relaxed font-normal">{p.scope}</p>
 
                 <div className="space-y-2">
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">
                     Project Highlights & Technical Accomplishments:
                   </p>
 
@@ -251,9 +251,9 @@ export const Projects: React.FC = () => {
                     {p.highlights.map((h, i) => (
                       <div
                         key={i}
-                        className="flex items-start gap-2 p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-xs text-slate-200"
+                        className="flex items-start gap-2 p-3 rounded-xl bg-slate-50/80 border border-slate-200 text-xs text-slate-800"
                       >
-                        <CheckCircle2 className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
                         <span>{h}</span>
                       </div>
                     ))}
@@ -264,7 +264,7 @@ export const Projects: React.FC = () => {
           ))}
 
           {filteredProjects.length === 0 && (
-            <div className="text-center py-12 p-8 rounded-2xl bg-slate-900 border border-slate-800 text-slate-400">
+            <div className="text-center py-12 p-8 rounded-2xl bg-white border border-slate-200 text-slate-500">
               <p className="text-sm">No projects found matching criteria "{searchTerm}".</p>
             </div>
           )}

@@ -32,14 +32,14 @@ export const QualitySafety: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-950/80 border border-orange-500/30 text-orange-300 text-xs font-semibold">
-            <ShieldCheck className="w-3.5 h-3.5 text-orange-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-950/80 border border-blue-200 text-orange-300 text-xs font-semibold">
+            <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
             <span>7. Quality Assurance & Zero-Accident Safety</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
             Strict Standards & High-Voltage Compliance
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
             Zero-accident safety culture and strict adherence to IS standards, Central Electricity
             Authority regulations, and state electrical inspectorate protocols.
           </p>
@@ -49,40 +49,40 @@ export const QualitySafety: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Column 1: Core Quality Protocols */}
           <div className="lg:col-span-7 space-y-4">
-            <h3 className="text-xl font-bold text-white mb-4">Core Quality & Safety Directives</h3>
+            <h3 className="text-xl font-bold text-slate-900 mb-4">Core Quality & Safety Directives</h3>
 
             {QUALITY_SAFETY_RULES.map((rule, idx) => (
               <div
                 key={idx}
-                className="p-5 rounded-2xl liquid-glass border border-slate-800 hover:border-orange-500/30 transition space-y-2"
+                className="p-5 rounded-2xl bg-white shadow-md border border-gray-100 border border-slate-200 hover:border-blue-200 transition space-y-2"
               >
-                <div className="flex items-center gap-2 text-orange-400 font-bold text-sm">
+                <div className="flex items-center gap-2 text-blue-600 font-bold text-sm">
                   <ShieldCheck className="w-4 h-4 shrink-0" />
                   <span>{rule.title}</span>
                 </div>
-                <p className="text-xs text-slate-300 leading-relaxed pl-6">{rule.details}</p>
+                <p className="text-xs text-slate-600 leading-relaxed pl-6">{rule.details}</p>
               </div>
             ))}
           </div>
 
           {/* Column 2: Interactive High-Voltage Pre-Energization Safety Audit */}
-          <div className="lg:col-span-5 p-6 sm:p-8 rounded-3xl liquid-glass border border-orange-500/30 backdrop-blur-xl shadow-2xl space-y-6">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+          <div className="lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-white shadow-md border border-gray-100 border border-blue-200 backdrop-blur-xl shadow-2xl space-y-6">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-4">
               <div>
-                <span className="text-xs font-bold text-orange-400 uppercase tracking-wider">
+                <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">
                   Site Audit Checklist
                 </span>
-                <h4 className="text-lg font-bold text-white">Pre-Energization Protocol</h4>
+                <h4 className="text-lg font-bold text-slate-900">Pre-Energization Protocol</h4>
               </div>
               <div className="text-right">
-                <span className="text-2xl font-black text-orange-400 font-mono">
+                <span className="text-2xl font-black text-blue-600 font-mono">
                   {totalChecked} / 6
                 </span>
-                <p className="text-[10px] text-slate-400">Verified</p>
+                <p className="text-[10px] text-slate-500">Verified</p>
               </div>
             </div>
 
-            <p className="text-xs text-slate-300">
+            <p className="text-xs text-slate-600">
               Interactive high-voltage safety clearance checklist executed by our site engineers
               prior to charging any substation:
             </p>
@@ -94,8 +94,8 @@ export const QualitySafety: React.FC = () => {
                   onClick={() => toggleCheck(item.key)}
                   className={`w-full flex items-center justify-between p-3 rounded-xl border text-left transition text-xs font-medium ${
                     activeChecklist[item.key]
-                      ? 'bg-slate-950 border-orange-500/50 text-orange-300'
-                      : 'bg-slate-950/40 border-slate-800 text-slate-500 hover:text-slate-300'
+                      ? 'bg-slate-50 border-orange-500/50 text-orange-300'
+                      : 'bg-slate-50/40 border-slate-200 text-slate-500 hover:text-slate-600'
                   }`}
                 >
                   <span className="pr-2">{item.label}</span>
@@ -103,7 +103,7 @@ export const QualitySafety: React.FC = () => {
                     className={`w-5 h-5 rounded flex items-center justify-center shrink-0 border ${
                       activeChecklist[item.key]
                         ? 'bg-orange-400 border-orange-400 text-slate-950'
-                        : 'border-slate-700 bg-slate-900'
+                        : 'border-slate-200 bg-white'
                     }`}
                   >
                     {activeChecklist[item.key] && <CheckSquare className="w-3.5 h-3.5" />}
@@ -112,8 +112,8 @@ export const QualitySafety: React.FC = () => {
               ))}
             </div>
 
-            <div className="p-4 rounded-xl bg-orange-950/50 border border-orange-500/30 flex items-center gap-3">
-              <Lock className="w-5 h-5 text-orange-400 shrink-0" />
+            <div className="p-4 rounded-xl bg-orange-950/50 border border-blue-200 flex items-center gap-3">
+              <Lock className="w-5 h-5 text-blue-600 shrink-0" />
               <div className="text-xs text-orange-200">
                 <p className="font-bold">Inspectorate Sanction Status:</p>
                 <p className="text-[11px] text-orange-300/80">

@@ -1,102 +1,20 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Logo } from './Logo';
-import {
-  Star,
-  Clock,
-  Calendar,
-  Play,
-  Search,
-  User,
-  Menu,
-  X,
-  ChevronLeft,
-  ChevronRight,
-  Volume2,
-  VolumeX,
-  Zap,
-  CheckCircle2,
-  FileText
-} from 'lucide-react';
+import { Search, User, Menu, X, ChevronRight, CheckCircle2 } from 'lucide-react';
+import bgImage from '../assets/bg-technology.jpg';
 
-interface CinematicHeroSectionProps {
+interface HeroSectionProps {
   onOpenEstimator: () => void;
   onOpenBrochure: () => void;
 }
 
-const CINEMATIC_SLIDES = [
-  {
-    id: 1,
-    rating: "8.7/10 IMDB",
-    subRating: "Class-1 Licensed • EHT Grade",
-    duration: "132 min",
-    date: "April, 2025",
-    title: "Step Through. Work Smarter.",
-    description: "A voyage through forgotten realms, where past and future intertwine.",
-    videoUrl: "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_094145_4a271a6c-3869-4f1c-8aa7-aeb0cb227994.mp4",
-  },
-  {
-    id: 2,
-    rating: "9.9/10 Safety",
-    subRating: "110kV / 66kV / 33kV Switchyards",
-    duration: "Turnkey",
-    date: "Established 2008",
-    title: "Powering High-Voltage Infrastructure.",
-    description: "Complete turnkey electrical engineering, EHT substation installation, and inspectorate charging.",
-    videoUrl: "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_094145_4a271a6c-3869-4f1c-8aa7-aeb0cb227994.mp4",
-  },
-  {
-    id: 3,
-    rating: "100% IS Compliant",
-    subRating: "PLC, SCADA & Power Distribution",
-    duration: "ISO 9001",
-    date: "Kerala Inspectorate",
-    title: "Industrial Automation & Controls.",
-    description: "Precision control panels, automated SCADA systems, heavy HT/LT cable laying, and sub-station testing.",
-    videoUrl: "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_094145_4a271a6c-3869-4f1c-8aa7-aeb0cb227994.mp4",
-  }
-];
-
-export const CinematicHeroSection: React.FC<CinematicHeroSectionProps> = ({
+export const CinematicHeroSection: React.FC<HeroSectionProps> = ({
   onOpenEstimator,
   onOpenBrochure,
 }) => {
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const currentSlide = CINEMATIC_SLIDES[currentSlideIndex];
-
-  const handleNextSlide = () => {
-    setCurrentSlideIndex((prev) => (prev + 1) % CINEMATIC_SLIDES.length);
-  };
-
-  const handlePrevSlide = () => {
-    setCurrentSlideIndex((prev) => (prev - 1 + CINEMATIC_SLIDES.length) % CINEMATIC_SLIDES.length);
-  };
-
-  const togglePlayPause = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      } else {
-        videoRef.current.play();
-        setIsPlaying(true);
-      }
-    }
-  };
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
 
   const navLinks = [
     { label: "Overview", target: "overview" },
@@ -115,161 +33,89 @@ export const CinematicHeroSection: React.FC<CinematicHeroSectionProps> = ({
   };
 
   return (
-    <div className="relative min-h-screen h-screen w-full flex flex-col justify-between overflow-hidden bg-black text-white font-sans">
-      {/* 1. BACKGROUND MOTION VIDEO (Fixed, Full cover, z-0) */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
-        className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none"
-      />
-      {/* Noise overlay */}
-      <div className="fixed inset-0 noise-overlay opacity-[0.7] mix-blend-overlay pointer-events-none z-0" />
-      {/* Gradient overlay */}
-      <div className="fixed inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60 pointer-events-none z-0" />
-
-      {/* 2. BOTTOM BLUR OVERLAY (No gradient darkening, pure backdrop-blur-xl with mask) */}
-      <div
-        className="fixed inset-0 backdrop-blur-xl bottom-blur-overlay pointer-events-none z-1"
-        style={{
-          WebkitMaskImage: 'linear-gradient(to top, black 0%, transparent 45%)',
-          maskImage: 'linear-gradient(to top, black 0%, transparent 45%)',
-        }}
-      />
-
-      {/* Audio toggle button removed as requested */}
-
-      {/* 3. NAVBAR (z-index 50) */}
-      <header className="relative z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 md:py-6">
+    <div className="relative min-h-screen h-screen w-full flex flex-col bg-slate-50 font-sans">
+      
+      {/* NAVBAR */}
+      <header className="relative z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 bg-white shadow-sm border-b border-gray-100">
         {/* Left Logo */}
-        <div
-          className="flex items-center animate-blur-fade-up"
-          style={{ animationDelay: '0ms' }}
-        >
-          <a href="#" className="flex items-center gap-2 group transition transform hover:scale-105">
+        <div className="flex items-center">
+          <a href="#" className="flex items-center gap-2">
             <Logo size="md" />
           </a>
         </div>
 
-        {/* Center Nav Links (Desktop LG only) */}
+        {/* Center Nav Links */}
         <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link, idx) => {
-            const delay = 100 + idx * 50;
-
-            return (
-              <a
-                key={link.label}
-                href={`#${link.target}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(link.target);
-                }}
-                className="text-sm text-gray-200 hover:text-gray-300 transition-colors animate-blur-fade-up font-medium"
-                style={{ animationDelay: `${delay}ms` }}
-              >
-                {link.label}
-              </a>
-            );
-          })}
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={`#${link.target}`}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(link.target);
+              }}
+              className="text-sm text-slate-700 hover:text-blue-600 font-semibold transition-colors uppercase tracking-wide"
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
 
         {/* Right Action Buttons */}
-        <div className="flex items-center gap-3">
-          {/* Search Button (sm and up) */}
+        <div className="flex items-center gap-4">
           <button
             onClick={() => setIsSearchOpen(!isSearchOpen)}
-            className="hidden sm:flex items-center gap-2 rounded-full liquid-glass px-4 md:px-6 py-2 text-sm text-white font-medium hover:bg-white/10 transition animate-blur-fade-up"
-            style={{ animationDelay: '350ms' }}
+            className="hidden sm:flex items-center gap-2 px-4 py-2 text-sm text-slate-600 font-medium hover:text-blue-600 transition"
           >
-            <Search className="w-4 h-4 text-orange-400" />
+            <Search className="w-5 h-5" />
             <span>Search</span>
           </button>
 
-          {/* User Profile Circle (sm and up) */}
           <button
             onClick={onOpenBrochure}
-            className="hidden sm:flex w-10 h-10 rounded-full liquid-glass items-center justify-center text-white hover:bg-white/10 transition animate-blur-fade-up"
-            style={{ animationDelay: '400ms' }}
+            className="hidden sm:flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-md text-sm font-semibold transition shadow-md"
             title="E & C Controls Corporate Profile"
           >
-            <User className="w-4 h-4 text-cyan-300" />
+            <User className="w-4 h-4" />
+            <span>Profile</span>
           </button>
 
-          {/* Hamburger Menu Toggle (below lg) */}
+          {/* Hamburger Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden w-10 h-10 rounded-full liquid-glass flex items-center justify-center text-white hover:bg-white/10 transition animate-blur-fade-up relative overflow-hidden"
-            style={{ animationDelay: '350ms' }}
+            className="lg:hidden w-10 h-10 flex items-center justify-center text-slate-800 hover:text-blue-600 transition"
             aria-label="Toggle Navigation Menu"
           >
-            <div
-              className={`transition-all duration-500 ease-out transform ${
-                isMobileMenuOpen ? 'rotate-180 opacity-0 scale-50 absolute' : 'rotate-0 opacity-100 scale-100'
-              }`}
-            >
-              <Menu className="w-5 h-5 text-white" />
-            </div>
-            <div
-              className={`transition-all duration-500 ease-out transform ${
-                isMobileMenuOpen ? 'rotate-0 opacity-100 scale-100' : '-rotate-180 opacity-0 scale-50 absolute'
-              }`}
-            >
-              <X className="w-5 h-5 text-white" />
-            </div>
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </header>
 
-      {/* Quick Search Bar Dropdown Overlay */}
+      {/* Quick Search Bar */}
       {isSearchOpen && (
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[90%] max-w-xl z-50 p-4 rounded-2xl bg-slate-900/95 border border-orange-500/30 backdrop-blur-2xl shadow-2xl animate-in fade-in slide-in-from-top-4">
-          <div className="flex items-center gap-3 bg-slate-950 px-4 py-3 rounded-xl border border-slate-800">
-            <Search className="w-5 h-5 text-orange-400 shrink-0" />
+        <div className="absolute top-[80px] left-0 w-full z-40 bg-white border-b border-gray-200 shadow-md p-4 flex justify-center animate-in fade-in slide-in-from-top-2">
+          <div className="w-full max-w-3xl flex items-center gap-3 bg-slate-50 px-4 py-3 rounded-md border border-gray-300">
+            <Search className="w-5 h-5 text-gray-400 shrink-0" />
             <input
               type="text"
-              placeholder="Search major projects, 110kV substations, SCADA, or ISO certifications..."
+              placeholder="Search services, projects, or certifications..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-transparent w-full text-sm text-white focus:outline-none placeholder:text-slate-500"
+              className="bg-transparent w-full text-sm text-slate-800 focus:outline-none placeholder:text-gray-400"
               autoFocus
             />
-            <button
-              onClick={() => setIsSearchOpen(false)}
-              className="text-xs text-slate-400 hover:text-white"
-            >
-              <X className="w-4 h-4" />
+            <button onClick={() => setIsSearchOpen(false)} className="text-gray-400 hover:text-gray-600">
+              <X className="w-5 h-5" />
             </button>
           </div>
-          {searchQuery && (
-            <div className="mt-3 space-y-2 text-xs text-slate-300 max-h-48 overflow-y-auto">
-              <p className="font-semibold text-orange-400 uppercase text-[10px] tracking-wider px-1">Search Results for "{searchQuery}"</p>
-              <a href="#projects" onClick={() => setIsSearchOpen(false)} className="block p-2 rounded hover:bg-slate-800/80 transition">
-                ⚡ 110kV Substation Turnkey Electrification
-              </a>
-              <a href="#expertise" onClick={() => setIsSearchOpen(false)} className="block p-2 rounded hover:bg-slate-800/80 transition">
-                ⚙️ PLC, SCADA & Industrial Control Panels
-              </a>
-              <a href="#infrastructure" onClick={() => setIsSearchOpen(false)} className="block p-2 rounded hover:bg-slate-800/80 transition">
-                📜 Class-1 EHT Inspectorate License Details
-              </a>
-            </div>
-          )}
         </div>
       )}
 
-      {/* 4. MOBILE DROPDOWN MENU (below lg breakpoint) */}
-      <div
-        className={`absolute top-[72px] left-0 right-0 z-40 bg-gray-900/95 backdrop-blur-lg border-t border-b border-gray-800 shadow-2xl px-6 py-6 transition-all duration-500 ease-out ${
-          isMobileMenuOpen
-            ? 'translate-y-0 opacity-100'
-            : '-translate-y-4 opacity-0 pointer-events-none'
-        }`}
-      >
-        <div className="flex flex-col gap-2">
-          {navLinks.map((link, idx) => {
-            return (
+      {/* MOBILE DROPDOWN MENU */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-[72px] left-0 w-full z-40 bg-white border-b border-gray-200 shadow-xl px-6 py-4">
+          <div className="flex flex-col gap-1">
+            {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={`#${link.target}`}
@@ -277,40 +123,72 @@ export const CinematicHeroSection: React.FC<CinematicHeroSectionProps> = ({
                   e.preventDefault();
                   scrollToSection(link.target);
                 }}
-                className="py-3 px-3 rounded-lg hover:bg-gray-800/50 text-base text-gray-200 hover:text-white font-medium transition transform hover:translate-x-1"
-                style={{ transitionDelay: `${idx * 50}ms` }}
+                className="py-3 px-2 border-b border-gray-100 last:border-0 text-slate-700 hover:text-blue-600 font-semibold uppercase tracking-wide text-sm"
               >
                 {link.label}
               </a>
-            );
-          })}
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* HERO CONTENT */}
+      <div className="relative flex-1 flex flex-col items-center justify-center pt-10">
+        {/* Background Image with Corporate Blue Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img src={bgImage} alt="Engineering Infrastructure" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-blue-950/80 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-950/90 to-transparent" />
         </div>
 
-        {/* Below sm search/profile section */}
-        <div className="sm:hidden mt-6 pt-6 border-t border-gray-800 flex items-center justify-between gap-4">
-          <button
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              setIsSearchOpen(true);
-            }}
-            className="flex-1 rounded-full liquid-glass py-2.5 px-4 text-sm font-medium text-white flex items-center justify-center gap-2"
-          >
-            <Search className="w-4 h-4 text-orange-400" />
-            <span>Search</span>
-          </button>
-          <button
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              onOpenBrochure();
-            }}
-            className="rounded-full liquid-glass p-2.5 text-white flex items-center justify-center"
-          >
-            <User className="w-4 h-4 text-cyan-300" />
-          </button>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 text-center md:text-left flex flex-col md:flex-row items-center md:items-end justify-between gap-12 pb-20">
+          
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-200 text-xs font-bold uppercase tracking-wider mb-6">
+              <CheckCircle2 className="w-4 h-4 text-blue-400" />
+              Class-1 EHT Grade & ISO 9001 Certified
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 tracking-tight">
+              Powering High-Voltage <br className="hidden md:block" />
+              <span className="text-yellow-400">Infrastructure.</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-blue-100 font-medium mb-10 max-w-2xl leading-relaxed">
+              Complete turnkey electrical engineering, EHT substation installation, PLC & SCADA industrial automation, and inspectorate charging across India.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-center md:justify-start justify-center gap-4">
+              <button
+                onClick={onOpenEstimator}
+                className="w-full sm:w-auto px-8 py-4 bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold rounded-md shadow-lg transition flex items-center justify-center gap-2"
+              >
+                Request a Quote
+                <ChevronRight className="w-5 h-5" />
+              </button>
+              <button
+                onClick={() => scrollToSection('expertise')}
+                className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold rounded-md transition flex items-center justify-center"
+              >
+                Explore Capabilities
+              </button>
+            </div>
+          </div>
+          
+          {/* Quick Stats / Corporate Trust Badges */}
+          <div className="hidden lg:flex flex-col gap-6 text-right pb-4">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-lg w-64 text-left">
+              <h3 className="text-3xl font-black text-yellow-400 mb-1">16+</h3>
+              <p className="text-sm font-semibold text-blue-100 uppercase tracking-wide">Years of Excellence</p>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-lg w-64 text-left">
+              <h3 className="text-3xl font-black text-yellow-400 mb-1">Turnkey</h3>
+              <p className="text-sm font-semibold text-blue-100 uppercase tracking-wide">Substation Solutions</p>
+            </div>
+          </div>
+
         </div>
       </div>
-
-
     </div>
   );
 };

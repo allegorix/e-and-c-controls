@@ -27,9 +27,9 @@ export const Expertise: React.FC = () => {
   const getIcon = (name: string) => {
     switch (name) {
       case 'Zap':
-        return <Zap className="w-5 h-5 text-orange-400" />;
+        return <Zap className="w-5 h-5 text-blue-600" />;
       case 'Cpu':
-        return <Cpu className="w-5 h-5 text-cyan-400" />;
+        return <Cpu className="w-5 h-5 text-blue-600" />;
       case 'Box':
         return <Box className="w-5 h-5 text-teal-400" />;
       case 'Grid':
@@ -39,9 +39,9 @@ export const Expertise: React.FC = () => {
       case 'Factory':
         return <Factory className="w-5 h-5 text-amber-400" />;
       case 'Building2':
-        return <Building2 className="w-5 h-5 text-blue-400" />;
+        return <Building2 className="w-5 h-5 text-blue-600" />;
       case 'Power':
-        return <Power className="w-5 h-5 text-orange-400" />;
+        return <Power className="w-5 h-5 text-blue-600" />;
       case 'ShieldAlert':
         return <ShieldAlert className="w-5 h-5 text-rose-400" />;
       case 'Layers':
@@ -86,18 +86,18 @@ export const Expertise: React.FC = () => {
   });
 
   return (
-    <section id="expertise" className="py-20 bg-slate-950/60 relative border-t border-slate-900">
+    <section id="expertise" className="py-20 bg-slate-50/60 relative border-t border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-950/80 border border-orange-500/30 text-orange-300 text-xs font-semibold">
-            <Zap className="w-3.5 h-3.5 text-orange-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-950/80 border border-blue-200 text-orange-300 text-xs font-semibold">
+            <Zap className="w-3.5 h-3.5 text-blue-600" />
             <span>2. Comprehensive Engineering Expertise</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
             Our 11 Electrical Work Domains
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
             From 110kV EHT Substations and Transformer Commissioning to Industrial Heavy Power & AMC
             Servicing.
           </p>
@@ -111,8 +111,8 @@ export const Expertise: React.FC = () => {
               onClick={() => setSelectedCategory(c.id)}
               className={`px-4 py-2 rounded-xl text-xs font-semibold transition ${
                 selectedCategory === c.id
-                  ? 'bg-orange-400 text-slate-950 shadow-lg shadow-orange-500/20'
-                  : 'liquid-glass border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700'
+                  ? 'bg-orange-400 text-slate-950 shadow-lg shadow-sm'
+                  : 'bg-white shadow-md border border-gray-100 border border-slate-200 text-slate-600 hover:text-white hover:border-slate-200'
               }`}
             >
               {c.label}
@@ -125,23 +125,23 @@ export const Expertise: React.FC = () => {
           {filteredList.map((item) => (
             <div
               key={item.id}
-              className="p-6 rounded-2xl liquid-glass border border-slate-800/80 hover:border-orange-500/40 hover:bg-white/5 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden shadow-xl"
+              className="p-6 rounded-2xl bg-white shadow-md border border-gray-100 border border-slate-200/80 hover:border-orange-500/40 hover:bg-slate-50 border border-slate-200 shadow-sm transition-all duration-300 flex flex-col justify-between group relative overflow-hidden shadow-xl"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800 group-hover:scale-105 transition-transform">
+                  <div className="p-3 rounded-xl bg-slate-50/80 border border-slate-200 group-hover:scale-105 transition-transform">
                     {getIcon(item.iconName)}
                   </div>
-                  <span className="px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-orange-950/90 text-orange-300 border border-orange-500/30">
+                  <span className="px-2.5 py-1 rounded-full text-[11px] font-mono font-bold bg-orange-950/90 text-orange-300 border border-blue-200">
                     {item.voltageGrade}
                   </span>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-extrabold text-white group-hover:text-orange-300 transition line-clamp-1">
+                  <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-orange-300 transition line-clamp-1">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-slate-400 mt-2 leading-relaxed line-clamp-3">
+                  <p className="text-xs text-slate-500 mt-2 leading-relaxed line-clamp-3">
                     {item.shortDesc}
                   </p>
                 </div>
@@ -154,7 +154,7 @@ export const Expertise: React.FC = () => {
                     {item.keyDeliverables.slice(0, 2).map((kd, idx) => (
                       <span
                         key={idx}
-                        className="text-[10px] px-2 py-0.5 rounded liquid-glass text-slate-300 border border-slate-800"
+                        className="text-[10px] px-2 py-0.5 rounded bg-white shadow-md border border-gray-100 text-slate-600 border border-slate-200"
                       >
                         • {kd}
                       </span>
@@ -163,12 +163,12 @@ export const Expertise: React.FC = () => {
                 </div>
               </div>
 
-              <div className="pt-6 mt-4 border-t border-slate-800/60 flex items-center justify-between">
+              <div className="pt-6 mt-4 border-t border-slate-200/60 flex items-center justify-between">
                 <span className="text-[11px] text-slate-500 font-medium">IS Compliant Works</span>
                 <button
                   onClick={() => setActiveModalItem(item)}
                   id={`btn-view-${item.id}`}
-                  className="flex items-center gap-1 text-xs font-bold text-orange-400 hover:text-orange-300 group-hover:translate-x-0.5 transition"
+                  className="flex items-center gap-1 text-xs font-bold text-blue-600 hover:text-orange-300 group-hover:translate-x-0.5 transition"
                 >
                   <span>Technical Scope</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
@@ -180,44 +180,44 @@ export const Expertise: React.FC = () => {
 
         {/* Detail Modal / Drawer */}
         {activeModalItem && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200">
-            <div className="w-full max-w-2xl liquid-glass border border-orange-500/30 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-50/80 backdrop-blur-md animate-in fade-in duration-200">
+            <div className="w-full max-w-2xl bg-white shadow-md border border-gray-100 border border-blue-200 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
               <button
                 onClick={() => setActiveModalItem(null)}
                 id="close-expertise-modal"
-                className="absolute top-6 right-6 p-2 rounded-xl bg-slate-950 border border-slate-800 text-slate-400 hover:text-white"
+                className="absolute top-6 right-6 p-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-500 hover:text-slate-900"
               >
                 <X className="w-5 h-5" />
               </button>
 
               <div className="flex items-center gap-3">
-                <div className="p-3 rounded-2xl bg-orange-500/10 border border-orange-400/30 text-orange-400">
+                <div className="p-3 rounded-2xl bg-blue-50 border border-orange-400/30 text-blue-600">
                   {getIcon(activeModalItem.iconName)}
                 </div>
                 <div>
-                  <span className="text-xs font-mono font-bold text-orange-400 uppercase">
+                  <span className="text-xs font-mono font-bold text-blue-600 uppercase">
                     Grade: {activeModalItem.voltageGrade}
                   </span>
-                  <h3 className="text-2xl font-black text-white">{activeModalItem.title}</h3>
+                  <h3 className="text-2xl font-black text-slate-900">{activeModalItem.title}</h3>
                 </div>
               </div>
 
-              <div className="space-y-4 text-sm text-slate-300">
-                <p className="leading-relaxed bg-slate-950/60 p-4 rounded-xl border border-slate-800">
+              <div className="space-y-4 text-sm text-slate-600">
+                <p className="leading-relaxed bg-slate-50/60 p-4 rounded-xl border border-slate-200">
                   {activeModalItem.fullDetails}
                 </p>
 
                 <div className="space-y-2">
-                  <h4 className="text-xs font-bold text-orange-400 uppercase tracking-wider">
+                  <h4 className="text-xs font-bold text-blue-600 uppercase tracking-wider">
                     Core Technical Deliverables
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {activeModalItem.keyDeliverables.map((kd, idx) => (
                       <div
                         key={idx}
-                        className="flex items-start gap-2 p-2.5 rounded-lg bg-slate-950 border border-slate-800/80 text-xs"
+                        className="flex items-start gap-2 p-2.5 rounded-lg bg-slate-50 border border-slate-200/80 text-xs"
                       >
-                        <CheckCircle className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
+                        <CheckCircle className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
                         <span>{kd}</span>
                       </div>
                     ))}
@@ -225,7 +225,7 @@ export const Expertise: React.FC = () => {
                 </div>
 
                 <div className="space-y-2 pt-2">
-                  <h4 className="text-xs font-bold text-cyan-400 uppercase tracking-wider">
+                  <h4 className="text-xs font-bold text-blue-600 uppercase tracking-wider">
                     Typical Sector Applications
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -241,7 +241,7 @@ export const Expertise: React.FC = () => {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 flex justify-end">
+              <div className="pt-4 border-t border-slate-200 flex justify-end">
                 <button
                   onClick={() => setActiveModalItem(null)}
                   className="px-6 py-2.5 rounded-xl bg-orange-400 text-slate-950 font-bold text-xs hover:bg-orange-300 transition"

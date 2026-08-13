@@ -5,7 +5,7 @@ import { COMPANY_INFO } from '../data/companyData';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-950 border-t border-slate-900 text-slate-400 text-xs py-12 relative z-10">
+    <footer className="bg-slate-50 border-t border-slate-900 text-slate-500 text-xs py-12 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Brand Info */}
@@ -15,11 +15,11 @@ export const Footer: React.FC = () => {
                 <Logo size="md" />
               </a>
             </div>
-            <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
+            <p className="text-slate-500 text-xs leading-relaxed max-w-sm">
               Class-1 Licensed Electrical Contracting Firm specializing in Extra High Tension (EHT)
               Substations, HT & LT installations, industrial electrification, and infrastructure works.
             </p>
-            <div className="flex items-center gap-2 pt-1 text-[11px] text-orange-400 font-mono">
+            <div className="flex items-center gap-2 pt-1 text-[11px] text-blue-600 font-mono">
               <ShieldCheck className="w-4 h-4" />
               <span>License: {COMPANY_INFO.licenseNo}</span>
             </div>
@@ -27,8 +27,8 @@ export const Footer: React.FC = () => {
 
           {/* Core Services Links */}
           <div className="md:col-span-3 space-y-2">
-            <p className="font-bold uppercase tracking-wider text-white text-xs">Core Expertise</p>
-            <ul className="space-y-1.5 text-slate-400">
+            <p className="font-bold uppercase tracking-wider text-slate-900 text-xs">Core Expertise</p>
+            <ul className="space-y-1.5 text-slate-500">
               <li>• EHT Substations (110kV/33kV)</li>
               <li>• HT & LT Electrical Works</li>
               <li>• Transformer Commissioning</li>
@@ -42,8 +42,8 @@ export const Footer: React.FC = () => {
 
           {/* Key Major Clients */}
           <div className="md:col-span-4 space-y-2">
-            <p className="font-bold uppercase tracking-wider text-white text-xs">Major Executed Clients</p>
-            <ul className="space-y-1.5 text-slate-400">
+            <p className="font-bold uppercase tracking-wider text-slate-900 text-xs">Major Executed Clients</p>
+            <ul className="space-y-1.5 text-slate-500">
               <li>• Malayala Manorama Co Pvt Ltd (800 Lakhs)</li>
               <li>• HOMCO Ltd Alappuzha (577 Lakhs)</li>
               <li>• NSS Medical Mission Hospitals (500 Lakhs)</li>

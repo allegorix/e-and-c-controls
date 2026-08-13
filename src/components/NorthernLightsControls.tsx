@@ -18,7 +18,7 @@ export const NorthernLightsControls: React.FC<NorthernLightsControlsProps> = ({
       id: 'emerald',
       name: 'Cosmic Sunset',
       gradient: 'from-orange-400 via-amber-300 to-orange-500',
-      accent: 'border-orange-400 text-orange-400',
+      accent: 'border-orange-400 text-blue-600',
     },
     {
       id: 'violet',
@@ -47,23 +47,23 @@ export const NorthernLightsControls: React.FC<NorthernLightsControlsProps> = ({
         <button
           onClick={() => setIsOpen(true)}
           id="open-aurora-controls"
-          className="group relative flex items-center gap-2.5 px-4 py-3 rounded-full bg-slate-900/90 border border-emerald-500/40 text-emerald-300 shadow-xl shadow-emerald-950/50 backdrop-blur-md hover:border-emerald-400 hover:scale-105 transition-all duration-300"
+          className="group relative flex items-center gap-2.5 px-4 py-3 rounded-full bg-white/90 border border-emerald-500/40 text-emerald-300 shadow-xl shadow-emerald-950/50 backdrop-blur-md hover:border-emerald-400 hover:scale-105 transition-all duration-300"
         >
           <span className="relative flex h-3 w-3">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
           </span>
-          <Sparkles className="w-4 h-4 text-emerald-400 group-hover:rotate-12 transition-transform" />
+          <Sparkles className="w-4 h-4 text-emerald-600 group-hover:rotate-12 transition-transform" />
           <span className="text-xs font-semibold tracking-wider uppercase">Aurora FX Controls</span>
         </button>
       )}
 
       {/* Expanded Controls Drawer Card */}
       {isOpen && (
-        <div className="w-80 p-5 rounded-2xl bg-slate-950/95 border border-emerald-500/30 text-slate-100 shadow-2xl shadow-black/80 backdrop-blur-xl animate-in fade-in slide-in-from-bottom-5 duration-300">
-          <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-800">
+        <div className="w-80 p-5 rounded-2xl bg-slate-50/95 border border-emerald-500/30 text-slate-900 shadow-2xl shadow-black/80 backdrop-blur-xl animate-in fade-in slide-in-from-bottom-5 duration-300">
+          <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
             <div className="flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-emerald-400" />
+              <Sparkles className="w-5 h-5 text-emerald-600" />
               <h4 className="text-sm font-bold uppercase tracking-wider text-emerald-300">
                 Northern Lights Engine
               </h4>
@@ -71,7 +71,7 @@ export const NorthernLightsControls: React.FC<NorthernLightsControlsProps> = ({
             <button
               onClick={() => setIsOpen(false)}
               id="close-aurora-controls"
-              className="text-slate-400 hover:text-slate-100 p-1 rounded-lg hover:bg-slate-800 transition"
+              className="text-slate-500 hover:text-slate-900 p-1 rounded-lg hover:bg-slate-100 transition"
             >
               ✕
             </button>
@@ -80,7 +80,7 @@ export const NorthernLightsControls: React.FC<NorthernLightsControlsProps> = ({
           <div className="space-y-4 text-xs">
             {/* Color Palette Selector */}
             <div>
-              <label className="block text-slate-400 mb-2 font-medium">Aurora Color Palette</label>
+              <label className="block text-slate-500 mb-2 font-medium">Aurora Color Palette</label>
               <div className="grid grid-cols-2 gap-2">
                 {themes.map((t) => (
                   <button
@@ -89,7 +89,7 @@ export const NorthernLightsControls: React.FC<NorthernLightsControlsProps> = ({
                     className={`flex items-center gap-2 p-2 rounded-xl border text-left transition ${
                       settings.theme === t.id
                         ? `${t.accent} bg-slate-800/80 font-semibold shadow-sm`
-                        : 'border-slate-800 bg-slate-900/50 text-slate-400 hover:border-slate-700'
+                        : 'border-slate-200 bg-slate-50 border border-slate-200 shadow-sm0 text-slate-500 hover:border-slate-200'
                     }`}
                   >
                     <span
@@ -103,11 +103,11 @@ export const NorthernLightsControls: React.FC<NorthernLightsControlsProps> = ({
 
             {/* Wave Motion Speed Slider */}
             <div>
-              <div className="flex justify-between text-slate-300 mb-1">
+              <div className="flex justify-between text-slate-600 mb-1">
                 <span className="flex items-center gap-1.5">
-                  <RefreshCw className="w-3.5 h-3.5 text-cyan-400" /> Wave Speed
+                  <RefreshCw className="w-3.5 h-3.5 text-blue-600" /> Wave Speed
                 </span>
-                <span className="font-mono text-cyan-400">{settings.speed.toFixed(1)}x</span>
+                <span className="font-mono text-blue-600">{settings.speed.toFixed(1)}x</span>
               </div>
               <input
                 type="range"
@@ -122,11 +122,11 @@ export const NorthernLightsControls: React.FC<NorthernLightsControlsProps> = ({
 
             {/* Wave Layer Density */}
             <div>
-              <div className="flex justify-between text-slate-300 mb-1">
+              <div className="flex justify-between text-slate-600 mb-1">
                 <span className="flex items-center gap-1.5">
-                  <Layers className="w-3.5 h-3.5 text-emerald-400" /> Aurora Wave Layers
+                  <Layers className="w-3.5 h-3.5 text-emerald-600" /> Aurora Wave Layers
                 </span>
-                <span className="font-mono text-emerald-400">{settings.waveCount}</span>
+                <span className="font-mono text-emerald-600">{settings.waveCount}</span>
               </div>
               <input
                 type="range"
@@ -141,7 +141,7 @@ export const NorthernLightsControls: React.FC<NorthernLightsControlsProps> = ({
 
             {/* Electrical Spark Intensity */}
             <div>
-              <div className="flex justify-between text-slate-300 mb-1">
+              <div className="flex justify-between text-slate-600 mb-1">
                 <span className="flex items-center gap-1.5">
                   <Zap className="w-3.5 h-3.5 text-amber-400" /> Voltage Spark Arcs
                 </span>
@@ -159,8 +159,8 @@ export const NorthernLightsControls: React.FC<NorthernLightsControlsProps> = ({
             </div>
 
             {/* Interactive Mouse Field Toggle */}
-            <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between">
-              <span className="flex items-center gap-1.5 text-slate-300">
+            <div className="pt-2 border-t border-slate-200/80 flex items-center justify-between">
+              <span className="flex items-center gap-1.5 text-slate-600">
                 <Eye className="w-3.5 h-3.5 text-purple-400" /> Cursor Magnetic Field
               </span>
               <button
