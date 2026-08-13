@@ -50,54 +50,38 @@ export const Overview: React.FC = () => {
           </p>
         </div>
 
-        {/* Narrative Card */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-white shadow-md border border-gray-100 border border-orange-500/20 backdrop-blur-xl relative overflow-hidden shadow-2xl">
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-50 blur-[120px] rounded-full pointer-events-none" />
+        {/* Narrative Card - Split Image Design */}
+        <div className="rounded-2xl bg-white shadow-md border border-gray-100 overflow-hidden flex flex-col lg:flex-row">
+          {/* Left Side: High Quality Image */}
+          <div className="w-full lg:w-5/12 min-h-[300px] lg:h-auto relative">
+            <img 
+              src="https://images.unsplash.com/photo-1473625247510-8ceb1760e4e7?auto=format&fit=crop&q=80" 
+              alt="Substation infrastructure" 
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-8 space-y-6">
-              <h3 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
-                <span className="w-3 h-3 rounded-full bg-orange-400 animate-pulse" />
-                End-to-End High-Voltage Electrical Contracting
-              </h3>
-              <p className="text-slate-600 text-base leading-relaxed">
-                {COMPANY_INFO.overview}
-              </p>
-              <div className="pt-2 grid grid-cols-2 sm:grid-cols-3 gap-4">
-                <div className="p-3.5 rounded-xl bg-white shadow-md border border-gray-100 border border-slate-200">
-                  <p className="text-xs text-slate-500 font-medium">License Grade</p>
-                  <p className="text-xs font-bold text-orange-300 mt-1">Class-1 EHT Inspectorate</p>
-                </div>
-                <div className="p-3.5 rounded-xl bg-white shadow-md border border-gray-100 border border-slate-200">
-                  <p className="text-xs text-slate-500 font-medium">Substation Class</p>
-                  <p className="text-xs font-bold text-cyan-300 mt-1">110kV / 66kV / 33kV / 11kV</p>
-                </div>
-                <div className="p-3.5 rounded-xl bg-white shadow-md border border-gray-100 border border-slate-200 col-span-2 sm:col-span-1">
-                  <p className="text-xs text-slate-500 font-medium">Turnkey Scope</p>
-                  <p className="text-xs font-bold text-amber-300 mt-1">Design to Charging</p>
-                </div>
+          {/* Right Side: Content */}
+          <div className="w-full lg:w-7/12 p-8 sm:p-10 lg:p-12 space-y-6">
+            <h3 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
+              <span className="w-3 h-3 rounded-full bg-blue-600" />
+              End-to-End High-Voltage Electrical Contracting
+            </h3>
+            <p className="text-slate-600 text-base leading-relaxed">
+              {COMPANY_INFO.overview}
+            </p>
+            <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">License Grade</p>
+                <p className="text-sm font-bold text-slate-900 mt-1">Class-1 EHT Inspectorate</p>
               </div>
-            </div>
-
-            {/* Northern Lights Quick Badge */}
-            <div className="lg:col-span-4 p-6 rounded-2xl bg-white shadow-md border border-gray-100 border border-blue-200 text-center space-y-4">
-              <div className="mx-auto w-12 h-12 rounded-2xl bg-blue-50 border border-orange-400/30 flex items-center justify-center text-blue-600">
-                <Award className="w-6 h-6" />
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Substation Class</p>
+                <p className="text-sm font-bold text-slate-900 mt-1">110kV / 66kV / 33kV / 11kV</p>
               </div>
-              <div>
-                <p className="text-xs font-semibold text-blue-600 uppercase tracking-wider">
-                  Operational Philosophy
-                </p>
-                <p className="text-lg font-extrabold text-slate-900 mt-1">Quality • Safety • On-Time</p>
-              </div>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Adhering to strict IS standards, CEA safety norms, and zero-downtime commissioning
-                practices for state utilities and top industrial leaders.
-              </p>
             </div>
           </div>
         </div>
-
         {/* Turnkey Execution Lifecycle (Interactive Tabs) */}
         <div className="space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">

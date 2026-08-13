@@ -30,19 +30,23 @@ export const QualitySafety: React.FC = () => {
   return (
     <section id="quality" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-950/80 border border-blue-200 text-orange-300 text-xs font-semibold">
-            <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
-            <span>7. Quality Assurance & Zero-Accident Safety</span>
+        {/* Header with Image */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-4">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold uppercase tracking-wider">
+              <ShieldCheck className="w-4 h-4 text-blue-600" />
+              <span>7. Quality Assurance & Zero-Accident Safety</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+              Strict Standards & High-Voltage Compliance
+            </h2>
+            <p className="text-slate-600 text-base leading-relaxed">
+              Zero-accident safety culture and strict adherence to IS standards, Central Electricity Authority regulations, and state electrical inspectorate protocols.
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Strict Standards & High-Voltage Compliance
-          </h2>
-          <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
-            Zero-accident safety culture and strict adherence to IS standards, Central Electricity
-            Authority regulations, and state electrical inspectorate protocols.
-          </p>
+          <div className="relative h-64 lg:h-80 rounded-2xl overflow-hidden shadow-md border border-gray-200">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80" alt="Engineers reviewing safety protocols" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+          </div>
         </div>
 
         {/* 2 Column Layout: Quality Protocols & Interactive Safety Audit Simulator */}

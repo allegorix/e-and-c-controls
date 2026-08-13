@@ -86,22 +86,30 @@ export const Expertise: React.FC = () => {
   });
 
   return (
-    <section id="expertise" className="py-20 bg-slate-50/60 relative border-t border-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-950/80 border border-blue-200 text-orange-300 text-xs font-semibold">
-            <Zap className="w-3.5 h-3.5 text-blue-600" />
+    <section id="expertise" className="pb-20 relative bg-white">
+      {/* Banner Header with Image */}
+      <div className="relative pt-24 pb-32 mb-12 flex justify-center text-center overflow-hidden border-t border-slate-200">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80" alt="Industrial engineering expertise" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-slate-900/80 mix-blend-multiply" />
+        </div>
+        
+        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-xs font-semibold uppercase tracking-wider">
+            <Zap className="w-4 h-4 text-blue-400" />
             <span>2. Comprehensive Engineering Expertise</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Our 11 Electrical Work Domains
           </h2>
-          <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
-            From 110kV EHT Substations and Transformer Commissioning to Industrial Heavy Power & AMC
-            Servicing.
+          <p className="text-blue-100 text-sm sm:text-base leading-relaxed">
+            From design to commissioning, we offer deep domain expertise across every facet of heavy electrical contracting.
           </p>
         </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 -mt-24 relative z-20">
 
         {/* Category Filters */}
         <div className="flex flex-wrap items-center justify-center gap-2">
